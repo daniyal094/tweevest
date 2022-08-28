@@ -2,9 +2,9 @@ import { useState } from "react";
 import Image from "next/image";
 function NavLink({ to, children }) {
   return (
-    <a href={to} className={`mx-4 text-blue-900 text-sm font-medium`}>
+    <button  className={`mx-4 text-blue-900 text-sm font-medium`}>
       {children}
-    </a>
+    </button>
   );
 }
 
@@ -17,7 +17,7 @@ function MobileNav({ open, setOpen }) {
     >
 
       <div className="flex flex-col ml-4 mt-10">
-        <a
+        <button
           className="text-xl font-medium my-4  text-blue-900 "
           href="/"
           onClick={() =>
@@ -28,8 +28,8 @@ function MobileNav({ open, setOpen }) {
         >
            Screener  
       
-        </a>
-        <a
+        </button>
+        <button
           className="text-xl font-normal my-4 text-blue-900 "
           href="/"
           onClick={() =>
@@ -39,8 +39,8 @@ function MobileNav({ open, setOpen }) {
           }
         >
           Watchlist
-        </a>
-        <a
+        </button>
+        <button
           className="text-xl font-normal my-4 text-blue-900 "
           href="/"
           onClick={() =>
@@ -50,7 +50,7 @@ function MobileNav({ open, setOpen }) {
           }
         >
           About
-        </a>
+        </button>
       </div>
     </div>
   );
@@ -62,13 +62,13 @@ export default function Navbar() {
     <nav className="flex filter  bg-gray-100 px-4 h-16 items-center">
       <MobileNav open={open} setOpen={setOpen} />
       <div className="w-5/12 flex items-center">
-        <a className="text-2xl font-semibold" href="/">
-          <Image src={"/logo.svg"} width={150} height={30} />
-        </a>
+        <span className="text-2xl font-semibold" >
+          <Image src={"/logo.svg"} width={150} height={30} alt="" />
+        </span>
       </div>
       <div className="w-9/12 flex justify-end items-center">
       <div className="bg-white rounded flex-row flex items-center h-10 justify-center w-5/6 mr-10">
-          <Image src={'/searchIcon.svg'} width={20} height={20} />
+          <Image src={'/searchIcon.svg'} width={20} height={20} alt=""/>
           <input className="bg-white outline-0 px-2   w-10/12 " placeholder="Search  Company Status"/>
         </div>
         <div

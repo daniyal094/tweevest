@@ -7,22 +7,22 @@ const FourthCard = () => {
       {/* HEADER SECTION  */}
       <div className="relative w-full bg-white flex flex-row justify-start items-center py-3">
         <h1 className="text-xs text-blue-900 mr-2">Forecast</h1>
-        <Image src={"/info-circle.svg"} width={15} height={15} />
+        <Image src={"/info-circle.svg"} width={15} height={15} alt=""/>
       </div>
       <div className="relative w-full bg-white flex flex-row justify-start items-center py-3">
         x``
         <h1 className="text-blue-900 font-bold text-md mx-1">34B</h1>
-        <Image src={"/arrow-up.svg"} width={15} height={15} className="ml-2" />
+        <Image src={"/arrow-up.svg"} width={15} height={15} className="ml-2" alt=""/>
         <h1 className="text-green-400" style={{ fontSize: "12px" }}>
           15%
         </h1>
         <h1 className="text-blue-900 font-bold text-md ml-3">$1.2</h1>
-        <Image src={"/arrow-up.svg"} width={15} height={15} className="ml-2" />
+        <Image src={"/arrow-up.svg"} width={15} height={15} className="ml-2" alt=""/>
         <h1 className="text-green-400" style={{ fontSize: "12px" }}>
           15%
         </h1>
         <h1 className="text-blue-900 font-bold text-md mx-1 ml-3">650M</h1>
-        <Image src={"/arrow-up.svg"} width={15} height={15} className="ml-2" />
+        <Image src={"/arrow-up.svg"} width={15} height={15} className="ml-2" alt=""/>
         <h1 className="text-green-400" style={{ fontSize: "12px" }}>
           15%
         </h1>

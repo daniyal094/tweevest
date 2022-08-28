@@ -51,14 +51,14 @@ export default function Example() {
               >
                 {/* LOGO SECTION  */}
                 <div className="relative w-full bg-white flex flex-row justify-start items-center border-b-2 py-3">
-                  <Image src={"/apple.svg"} width={70} height={70} />
+                  <Image src={"/apple.svg"} width={70} height={70} alt="" />
                   <div className="h-auto flex flex-col items-center ml-4 ">
                     <h1 className="text-blue-900 font-bold text-lg">
                       Apple Inc.
                     </h1>
                     <div className="flex flex-row">
                       <h1 className="text-blue-600 font-light mr-2">APPL</h1>
-                      <Image src={"/AmericaFlag.svg"} width={14} height={14} />
+                      <Image src={"/AmericaFlag.svg"} width={14} height={14} alt=""/>
                       <h1 className="text-blue-600 font-light ">NASDAQ</h1>
                     </div>
                   </div>
@@ -69,6 +69,7 @@ export default function Example() {
                   <span className="text-blue-800 text-sm ml-1 mb-0.5">USD</span>
                   &nbsp; &nbsp;
                   <Image
+                  alt=""
                     src={"/bottom-arrow.svg"}
                     width={20}
                     height={20}

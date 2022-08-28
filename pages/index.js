@@ -38,6 +38,7 @@ export default function Home() {
             <div className="bg-gray-300 rounded-2xl flex flex-row justify-between px-2 py-1 mx-1">
               <h1 className="text-gray-500 mr-3 ml-1">Earning Growth</h1>
               <Image
+                alt=""
                 src={"/close-circle.svg"}
                 width={20}
                 height={20}
@@ -47,6 +48,7 @@ export default function Home() {
             <div className="bg-gray-300 rounded-2xl flex flex-row justify-between px-2 py-1 mx-1">
               <h1 className="text-gray-500 mr-3 ml-1">Sales Growth</h1>
               <Image
+                alt=""
                 src={"/close-circle.svg"}
                 width={20}
                 height={20}
@@ -56,6 +58,7 @@ export default function Home() {
             <div className="bg-blue-500 rounded-2xl flex flex-row justify-between px-2 py-1 mx-1">
               <h1 className="text-white mr-3 ml-1">Add</h1>
               <Image
+                alt=""
                 src={"/add-circle.svg"}
                 width={20}
                 height={20}
@@ -73,7 +76,12 @@ export default function Home() {
                   <h1 className="text-blue-900 font-bold mr-2">
                     Fundamentals Snapshot
                   </h1>
-                  <Image src={"/info-circle.svg"} width={15} height={15} />
+                  <Image
+                    alt=""
+                    src={"/info-circle.svg"}
+                    width={15}
+                    height={15}
+                  />
 
                   <div className="h-2 w-7 bg-gray-300 border-gray-400 border-2 ml-4 rounded-lg mt-1"></div>
                   <h1 className="text-xs text-blue-900 font-semibold ml-1">
@@ -85,7 +93,7 @@ export default function Home() {
                   </h1>
                 </div>
                 <div className="bg-gray-200 flex flex-row items-center justify-center px-3 py-2 rounded-md">
-                  <Image src={"/activity.svg"} width={10} height={10} />
+                  <Image alt="" src={"/activity.svg"} width={10} height={10} />
                   <h1 className="text-blue-900 font-semibold text-xs ml-2">
                     Show Graph
                   </h1>
@@ -260,7 +268,12 @@ export default function Home() {
                     <h1 className="text-blue-900 font-bold mr-2">
                       Sales Growth
                     </h1>
-                    <Image src={"/info-circle.svg"} width={15} height={15} />
+                    <Image
+                      alt=""
+                      src={"/info-circle.svg"}
+                      width={15}
+                      height={15}
+                    />
 
                     <div className="h-2 w-7 bg-gray-300 border-gray-400 border-2 ml-4 rounded-lg mt-1"></div>
                     <h1 className="text-xs text-blue-900 font-semibold ml-1">
@@ -272,7 +285,12 @@ export default function Home() {
                     </h1>
                   </div>
                   <div className="bg-gray-200 flex flex-row items-center justify-center px-3 py-2 rounded-md">
-                    <Image src={"/activity.svg"} width={10} height={10} />
+                    <Image
+                      alt=""
+                      src={"/activity.svg"}
+                      width={10}
+                      height={10}
+                    />
                     <h1 className="text-blue-900 font-semibold text-xs ml-2">
                       Show Graph
                     </h1>
@@ -448,7 +466,12 @@ export default function Home() {
                     <h1 className="text-blue-900 font-bold mr-2">
                       Return on Equity
                     </h1>
-                    <Image src={"/info-circle.svg"} width={15} height={15} />
+                    <Image
+                      alt=""
+                      src={"/info-circle.svg"}
+                      width={15}
+                      height={15}
+                    />
 
                     <div className="h-2 w-7 bg-gray-300 border-gray-400 border-2 ml-4 rounded-lg mt-1"></div>
                     <h1 className="text-xs text-blue-900 font-semibold ml-1">
@@ -460,7 +483,12 @@ export default function Home() {
                     </h1>
                   </div>
                   <div className="bg-gray-200 flex flex-row items-center justify-center px-3 py-2 rounded-md">
-                    <Image src={"/activity.svg"} width={10} height={10} />
+                    <Image
+                      alt=""
+                      src={"/activity.svg"}
+                      width={10}
+                      height={10}
+                    />
                     <h1 className="text-blue-900 font-semibold text-xs ml-2">
                       Show Graph
                     </h1>
@@ -472,7 +500,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <Image src={"/inc.svg"} width={15} height={15} />
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -487,7 +515,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/dec.svg"} width={15} height={15} />
+                        <Image alt="" src={"/dec.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -503,7 +531,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -519,7 +547,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/dec.svg"} width={15} height={15} />
+                        <Image alt="" src={"/dec.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -535,7 +563,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -551,7 +579,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -567,7 +595,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -583,7 +611,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -599,7 +627,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -615,7 +643,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -634,7 +662,12 @@ export default function Home() {
                     <h1 className="text-blue-900 font-bold mr-2">
                       Institutionnal Ownership
                     </h1>
-                    <Image src={"/info-circle.svg"} width={15} height={15} />
+                    <Image
+                      alt=""
+                      src={"/info-circle.svg"}
+                      width={15}
+                      height={15}
+                    />
 
                     <div className="h-2 w-7 bg-gray-300 border-gray-400 border-2 ml-4 rounded-lg mt-1"></div>
                     <h1 className="text-xs text-blue-900 font-semibold ml-1">
@@ -646,7 +679,12 @@ export default function Home() {
                     </h1>
                   </div>
                   <div className="bg-blue-700 flex flex-row items-center justify-center px-3 py-2 rounded-md">
-                    <Image src={"/white-activity.svg"} width={10} height={10} />
+                    <Image
+                      alt=""
+                      src={"/white-activity.svg"}
+                      width={10}
+                      height={10}
+                    />
                     <h1 className="text-white font-semibold text-xs ml-2">
                       Show Graph
                     </h1>
@@ -658,7 +696,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <Image src={"/inc.svg"} width={15} height={15} />
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -673,7 +711,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/dec.svg"} width={15} height={15} />
+                        <Image alt="" src={"/dec.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -689,7 +727,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -705,7 +743,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/dec.svg"} width={15} height={15} />
+                        <Image alt="" src={"/dec.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -721,7 +759,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -737,7 +775,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -753,7 +791,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -769,7 +807,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -785,7 +823,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -801,7 +839,7 @@ export default function Home() {
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
                       <h1 className="font-semibold text-green-400 text-xs">
-                        <Image src={"/inc.svg"} width={15} height={15} />
+                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       </h1>
                       <h1
                         className="font-semibold text-gray-400"
@@ -829,15 +867,20 @@ export default function Home() {
         <footer>
           <div className="w-full bg-blue-900 h-56 flex items-end">
             <div className="flex flex-row justify-between w-full mb-3">
-              <Image src={"/TweeVest_Logo.svg"} width={150} height={30} />
+              <Image
+                alt=""
+                src={"/TweeVest_Logo.svg"}
+                width={150}
+                height={30}
+              />
               <span className="text-white font-semibold text-sm">
                 © 2022 TweeVest. All rights reserved
               </span>
               <div className="flex flex-row justify-between  w-32 pr-4">
-                <Image src={"/social1.svg"} width={20} height={30}  />
-                <Image src={"/social2.svg"} width={20} height={30} />
-                <Image src={"/social3.svg"} width={20} height={30} />
-                <Image src={"/social4.svg"} width={20} height={30} />
+                <Image alt="" src={"/social1.svg"} width={20} height={30} />
+                <Image alt="" src={"/social2.svg"} width={20} height={30} />
+                <Image alt="" src={"/social3.svg"} width={20} height={30} />
+                <Image alt="" src={"/social4.svg"} width={20} height={30} />
               </div>
             </div>
           </div>
