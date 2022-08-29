@@ -169,7 +169,7 @@ import { useState, useRef, useEffect } from "react";
 //   );
 // };
 
-export default () => {
+export default  Navbar = () => {
   const [menuState, setMenuState] = useState(false);
 
   // Replace javascript:void(0) path with your path
