@@ -63,12 +63,12 @@
 //       <MobileNav open={open} setOpen={setOpen} />
 //       <div className="w-5/12 flex items-center">
 //         <a className="text-2xl font-semibold" href="/">
-//           <Image src={"/logo.svg"} width={150} height={30} />
+//           <Image alt="" src={"/logo.svg"} width={150} height={30} />
 //         </a>
 //       </div>
 //       <div className="w-9/12 flex justify-end items-center">
 //       <div className="bg-white rounded flex-row flex items-center h-10 justify-center w-5/6 mr-10">
-//           <Image src={'/searchIcon.svg'} width={20} height={20} />
+//           <Image alt="" src={'/searchIcon.svg'} width={20} height={20} />
 //           <input className="bg-white outline-0 px-2   w-10/12 " placeholder="Search  Company Status"/>
 //         </div>
 //         <div
@@ -184,7 +184,7 @@ export default () => {
       <div className="flex items-center space-x-8 py-3 px-4 max-w-screen-xl mx-auto">
         <div className="flex-none lg:flex-initial">
           <a href="javascript:void(0)">
-            <Image src={"/logosvg.svg"} width={120} height={50} alt="logo" />
+            <Image  src={"/logosvg.svg"} width={120} height={50} alt="logo" />
           </a>
         </div>
         <div className="flex-1 flex items-center justify-between">
@@ -224,9 +224,9 @@ export default () => {
                   </li>
                 ))}
               </ul>
-              {/* <ProfileDropDown class="mt-5 pt-5 border-t lg:hidden" /> */}
+              {/* <ProfileDropDown className="mt-5 pt-5 border-t lg:hidden" /> */}
             </div>
-            {/* <ProfileDropDown class="hidden lg:block" /> */}
+            {/* <ProfileDropDown className="hidden lg:block" /> */}
             <button
               className="outline-none text-gray-400 block lg:hidden"
               onClick={() => setMenuState(!menuState)}
