@@ -5,7 +5,7 @@ import CustomSlider from "./CustomSlider";
 const FirstCard = () => {
   return (
     <div
-      className="px-3 group relative  bg-white shadow-lg rounded mr-3"
+      className="px-3 group relative  bg-white shadow-lg rounded mr-3 pb-2"
     >
       {/* LOGO SECTION  */}
       <div className="relative w-full bg-white flex flex-row justify-start items-center border-b-2 py-3">

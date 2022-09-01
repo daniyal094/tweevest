@@ -44,9 +44,10 @@ const FourthCard = () => {
           colors={["#FFC56D", "#FFC56D", "#ECEEF1", "#55C2A3", "#55C2A3"]}
           percent={0.37}
           arcPadding={0}
-          arcWidth={0.1}
+          arcWidth={0.05}
           cornerRadius={0}
           hideText={true}
+          
         />
       </div>
       <h1 className="text-blue-900 text-sm mb-4 mt-1 text-center font-bold">

@@ -26,19 +26,20 @@ ChartJS.register(
 export const options = {
   responsive: true,
   maintainAspectRatio: false,
+
   plugins: {
     legend: {
       display: false,
     },
   },
+
   scales: {
     x: {
       grid: {
-        display: false
-      }
+        display: false,
+      },
     },
-  
-  }
+  },
 };
 
 const labels = ["Q1.19", "Q2.19", "Q3.19", "Q4.19", "Q1.20", "Q2.20"];
@@ -48,9 +49,10 @@ export const data = {
   datasets: [
     {
       fill: true,
-      data: [0, 30, 20, 40, 16, 0],
+      data: [6, 12, 15, 11, 12, 15],
       borderColor: "rgb(53, 162, 235)",
       backgroundColor: "rgba(53, 162, 235, 0.5)",
+      lineTension: 0.5,  
     },
   ],
 };
