@@ -1,14 +1,24 @@
 import Head from "next/head";
 import Image from "next/image";
-import AreaChart from "../components/AreaChart";
 import FirstCard from "../components/FirstCard";
 import FourthCard from "../components/FourthCard";
 import Navbar from "../components/Navbar";
 import SecondCard from "../components/SecondCard";
 import Tabs from "../components/Tabs";
 import ThirdCard from "../components/ThirdCard";
+import data from '../data.json'
+import { Area } from '@ant-design/plots';
 
 export default function Home() {
+  const config = {
+    data,
+    xField: 'timePeriod',
+    yField: 'value',
+    xAxis: {
+      range: [0, 1],
+    },
+  };
+
   return (
     <>
       <Head>
@@ -21,7 +31,7 @@ export default function Home() {
         <Navbar />
         <Tabs />
         {/* CARDS SECTION */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-12xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto  lg:max-w-none">
             <div className="mt-10 space-y-12 md:space-y-0  md:grid md:grid-cols-2  md:gap-x-4 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-x-6 ">
               <FirstCard />
@@ -32,7 +42,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="max-w-12xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           {/* filter SECTION */}
           <div className="bg-white shadow-xl rounded-md  h-14 mt-5 flex flex-row items-center pl-3 border-2  border-gray-100">
             <div className="bg-gray-300 rounded-2xl flex flex-row justify-between px-2 py-1 mx-1">
@@ -45,7 +55,7 @@ export default function Home() {
               />
             </div>
             <div className="bg-gray-300 rounded-2xl flex flex-row justify-between px-2 py-1 mx-1">
-              <h1 className="text-gray-500 mr-3 ml-1">Sales Growth</h1>
+              <h1 className="text-gray-500 mr-3 ml-1 ms-font-small">Sales Growth</h1>
               <Image alt=""
                 src={"/close-circle.svg"}
                 width={20}
@@ -65,198 +75,183 @@ export default function Home() {
           </div>
           {/* LAST SECTION */}
           {/* LEFT SECTION */}
-          <div className="mt-10 flex flex-row md:flex-col lg:flex-row">
-            <div className="w-fit ">
-              {/* FIRST ROW */}
-              <div className="flex flex-row justify-between my-4 ">
-                <div className="flex flex-row items-center">
-                  <h1 className="text-blue-900 font-bold mr-2">
-                    Fundamentals Snapshot
-                  </h1>
-                  <Image alt="" src={"/info-circle.svg"} width={15} height={15} />
+          <div className="flex flex-wrap mairaj mt-5" style={{ alignItems: 'center', justifyContent: 'space-between', }}>
+            <div className="w-fit fundamentals-snapshot" style={{ width: '50%' }}>
+              <div className="w-fit" style={{ width: '100%' }}>
+                {/* FIRST ROW */}
+                <div className="flex flex-row justify-between my-4">
+                  <div className="flex flex-row items-center">
+                    <h1 className="text-blue-900 font-bold mr-2">
+                      Fundamentals Snapshot
+                    </h1>
+                    <Image alt="" src={"/info-circle.svg"} width={15} height={15} />
 
-                  <div className="h-2 w-7 bg-gray-300 border-gray-400 border-2 ml-4 rounded-lg mt-1"></div>
-                  <h1 className="text-xs text-blue-900 font-semibold ml-1">
-                    Current
-                  </h1>
-                  <div className="h-2 w-7 bg-blue-100 border-gray-400 border-2 ml-4 rounded-lg mt-1"></div>
-                  <h1 className="text-xs text-blue-900 font-semibold ml-1">
-                    Estimates
-                  </h1>
-                </div>
-                <div className="bg-gray-200 flex flex-row items-center justify-center px-3 py-2 rounded-md">
-                  <Image alt="" src={"/activity.svg"} width={10} height={10} />
-                  <h1 className="text-blue-900 font-semibold text-xs ml-2">
-                    Show Graph
-                  </h1>
-                </div>
-              </div>
-              <div className="flex flex-row">
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
+                    <div className="h-2 w-7 bg-gray-300 border-gray-400 border-2 ml-4 rounded-lg mt-1"></div>
+                    <h1 className="text-xs text-blue-900 font-semibold ml-1">
+                      Current
                     </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
+                    <div className="h-2 w-7 bg-blue-100 border-gray-400 border-2 ml-4 rounded-lg mt-1"></div>
+                    <h1 className="text-xs text-blue-900 font-semibold ml-1">
+                      Estimates
+                    </h1>
+                  </div>
+                  <div className="bg-gray-200 flex flex-row items-center justify-center px-3 py-2 rounded-md">
+                    <Image alt="" src={"/activity.svg"} width={10} height={10} />
+                    <h1 className="text-blue-900 font-semibold text-xs ml-2">
+                      Show Graph
                     </h1>
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
+                <div className="flex flex-wrap flex-row justify-between">
+                  <div className="flex flex-col justify-center items-center mx-1">
+                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
+                      Q1.19
                     </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
+                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
+                      <h1 className="font-semibold text-green-400 text-xs">
+                        +58%
+                      </h1>
+                      <h1
+                        className="font-semibold text-gray-400"
+                        style={{ fontSize: "10px" }}
+                      >
+                        1.58 vs 1
+                      </h1>
+                    </div>
+                  </div>
+                  <div className="flex flex-col justify-center items-center mx-1">
+                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
+                      Q1.19
                     </h1>
+                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
+                      <h1 className="font-semibold text-green-400 text-xs">
+                        +58%
+                      </h1>
+                      <h1
+                        className="font-semibold text-gray-400"
+                        style={{ fontSize: "10px" }}
+                      >
+                        1.58 vs 1
+                      </h1>
+                    </div>
+                  </div>{" "}
+                  <div className="flex flex-col justify-center items-center mx-1">
+                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
+                      Q1.19
+                    </h1>
+                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
+                      <h1 className="font-semibold text-green-400 text-xs">
+                        +58%
+                      </h1>
+                      <h1
+                        className="font-semibold text-gray-400"
+                        style={{ fontSize: "10px" }}
+                      >
+                        1.58 vs 1
+                      </h1>
+                    </div>
+                  </div>{" "}
+                  <div className="flex flex-col justify-center items-center mx-1">
+                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
+                      Q1.19
+                    </h1>
+                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
+                      <h1 className="font-semibold text-green-400 text-xs">
+                        +58%
+                      </h1>
+                      <h1
+                        className="font-semibold text-gray-400"
+                        style={{ fontSize: "10px" }}
+                      >
+                        1.58 vs 1
+                      </h1>
+                    </div>
+                  </div>{" "}
+                  <div className="flex flex-col justify-center items-center mx-1">
+                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
+                      Q1.19
+                    </h1>
+                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
+                      <h1 className="font-semibold text-green-400 text-xs">
+                        +58%
+                      </h1>
+                      <h1
+                        className="font-semibold text-gray-400"
+                        style={{ fontSize: "10px" }}
+                      >
+                        1.58 vs 1
+                      </h1>
+                    </div>
+                  </div>{" "}
+                  <div className="flex flex-col justify-center items-center mx-1">
+                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
+                      Q1.19
+                    </h1>
+                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
+                      <h1 className="font-semibold text-green-400 text-xs">
+                        +58%
+                      </h1>
+                      <h1
+                        className="font-semibold text-gray-400"
+                        style={{ fontSize: "10px" }}
+                      >
+                        1.58 vs 1
+                      </h1>
+                    </div>
+                  </div>{" "}
+                  <div className="flex flex-col justify-center items-center mx-1">
+                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
+                      Q1.19
+                    </h1>
+                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
+                      <h1 className="font-semibold text-green-400 text-xs">
+                        +58%
+                      </h1>
+                      <h1
+                        className="font-semibold text-gray-400"
+                        style={{ fontSize: "10px" }}
+                      >
+                        1.58 vs 1
+                      </h1>
+                    </div>
+                  </div>{" "}
+                  <div className="flex flex-col justify-center items-center mx-1">
+                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
+                      Q1.19
+                    </h1>
+                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
+                      <h1 className="font-semibold text-green-400 text-xs">
+                        +58%
+                      </h1>
+                      <h1
+                        className="font-semibold text-gray-400"
+                        style={{ fontSize: "10px" }}
+                      >
+                        1.58 vs 1
+                      </h1>
+                    </div>
+                  </div>{" "}
+                  <div className="flex flex-col justify-center items-center mx-1">
+                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
+                      Q1.19
+                    </h1>
+                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
+                      <h1 className="font-semibold text-green-400 text-xs">
+                        +58%
+                      </h1>
+                      <h1
+                        className="font-semibold text-gray-400"
+                        style={{ fontSize: "10px" }}
+                      >
+                        1.58 vs 1
+                      </h1>
+                    </div>
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
-                    </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
-                    </h1>
-                  </div>
-                </div>{" "}
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
-                    </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
-                    </h1>
-                  </div>
-                </div>{" "}
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
-                    </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
-                    </h1>
-                  </div>
-                </div>{" "}
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
-                    </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
-                    </h1>
-                  </div>
-                </div>{" "}
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
-                    </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
-                    </h1>
-                  </div>
-                </div>{" "}
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
-                    </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
-                    </h1>
-                  </div>
-                </div>{" "}
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
-                    </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
-                    </h1>
-                  </div>
-                </div>{" "}
-                <div className="flex flex-col justify-center items-center mx-1">
-                  <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                    Q1.19
-                  </h1>
-                  <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                    <h1 className="font-semibold text-green-400 text-xs">
-                      +58%
-                    </h1>
-                    <h1
-                      className="font-semibold text-gray-400"
-                      style={{ fontSize: "10px" }}
-                    >
-                      1.58 vs 1
-                    </h1>
-                  </div>
-                </div>
-              </div>
-              {/* SECOND ROW */}
-              <div className="w-fit my-5">
-                <div className="flex flex-row justify-between my-3">
-                  <div className="flex flex-row items-center ">
+                {/* second row begin */}
+
+                <div className="flex flex-wrap flex-row justify-between my-4">
+                  <div className="flex flex-row items-center">
                     <h1 className="text-blue-900 font-bold mr-2">
                       Sales Growth
                     </h1>
@@ -278,23 +273,7 @@ export default function Home() {
                     </h1>
                   </div>
                 </div>
-                <div className="flex flex-row">
-                  <div className="flex flex-col justify-center items-center mx-1">
-                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                      Q1.19
-                    </h1>
-                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        +58%
-                      </h1>
-                      <h1
-                        className="font-semibold text-gray-400"
-                        style={{ fontSize: "10px" }}
-                      >
-                        1.58 vs 1
-                      </h1>
-                    </div>
-                  </div>
+                <div className="flex flex-wrap flex-row justify-between">
                   <div className="flex flex-col justify-center items-center mx-1">
                     <h1 className="font-semibold text-blue-900 text-xs mb-1">
                       Q1.19
@@ -440,11 +419,12 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
-              {/* THIRD ROW */}
-              <div className="w-fit my-5">
-                <div className="flex flex-row justify-between my-3">
-                  <div className="flex flex-row items-center ">
+                {/* SECOND ROW end*/}
+
+
+                {/* THIRD ROW  begin*/}
+                <div className="flex flex-row justify-between my-4">
+                  <div className="flex flex-row items-center">
                     <h1 className="text-blue-900 font-bold mr-2">
                       Return on Equity
                     </h1>
@@ -466,7 +446,7 @@ export default function Home() {
                     </h1>
                   </div>
                 </div>
-                <div className="flex flex-row">
+                <div className="flex flex-wrap flex-row justify-between">
                   <div className="flex flex-col justify-center items-center mx-1">
                     <h1 className="font-semibold text-blue-900 text-xs mb-1">
                       Q1.19
@@ -486,25 +466,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/dec.svg"} width={15} height={15} />
-                      </h1>
-                      <h1
-                        className="font-semibold text-gray-400"
-                        style={{ fontSize: "10px" }}
-                      >
-                        1.58 vs 1
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-center items-center mx-1">
-                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                      Q1.19
-                    </h1>
-                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -518,9 +480,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/dec.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -534,9 +494,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -550,9 +508,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -566,9 +522,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -582,9 +536,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -598,9 +550,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -614,9 +564,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -626,11 +574,13 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
-              {/* FOURTH ROW */}
-              <div className="w-fit my-5">
-                <div className="flex flex-row justify-between my-3">
-                  <div className="flex flex-row items-center ">
+                {/* THIRD ROW end */}
+
+                Institutionnal Ownership
+
+                {/* FOURTH ROW begin */}
+                <div className="flex flex-row justify-between my-4">
+                  <div className="flex flex-row items-center">
                     <h1 className="text-blue-900 font-bold mr-2">
                       Institutionnal Ownership
                     </h1>
@@ -645,14 +595,14 @@ export default function Home() {
                       Estimates
                     </h1>
                   </div>
-                  <div className="bg-blue-700 flex flex-row items-center justify-center px-3 py-2 rounded-md">
-                    <Image alt="" src={"/white-activity.svg"} width={10} height={10} />
-                    <h1 className="text-white font-semibold text-xs ml-2">
+                  <div className="bg-gray-200 flex flex-row items-center justify-center px-3 py-2 rounded-md">
+                    <Image alt="" src={"/activity.svg"} width={10} height={10} />
+                    <h1 className="text-blue-900 font-semibold text-xs ml-2">
                       Show Graph
                     </h1>
                   </div>
                 </div>
-                <div className="flex flex-row">
+                <div className="flex flex-wrap flex-row justify-between">
                   <div className="flex flex-col justify-center items-center mx-1">
                     <h1 className="font-semibold text-blue-900 text-xs mb-1">
                       Q1.19
@@ -672,25 +622,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/dec.svg"} width={15} height={15} />
-                      </h1>
-                      <h1
-                        className="font-semibold text-gray-400"
-                        style={{ fontSize: "10px" }}
-                      >
-                        1.58 vs 1
-                      </h1>
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-center items-center mx-1">
-                    <h1 className="font-semibold text-blue-900 text-xs mb-1">
-                      Q1.19
-                    </h1>
-                    <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -704,9 +636,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/dec.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -720,9 +650,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -736,9 +664,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -752,9 +678,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -768,9 +692,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -784,9 +706,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -800,9 +720,7 @@ export default function Home() {
                       Q1.19
                     </h1>
                     <div className="bg-gray-200 w-14 h-12 rounded-md flex flex-col items-center justify-center">
-                      <h1 className="font-semibold text-green-400 text-xs">
-                        <Image alt="" src={"/inc.svg"} width={15} height={15} />
-                      </h1>
+                      <Image alt="" src={"/inc.svg"} width={15} height={15} />
                       <h1
                         className="font-semibold text-gray-400"
                         style={{ fontSize: "10px" }}
@@ -812,15 +730,21 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+                {/* FOURTH ROW end*/}
+
               </div>
+
             </div>
-            {/* RIGHT SECTION */}
-            <div className="p-3 w-full">
-              <div
-                className="bg-white shadow rounded-md p-4"
-                style={{ height: "80vh" }}
-              >
-                <AreaChart />
+            <div className="graph mt-5" style={{ width: '50%' }}>
+              {/* RIGHT SECTION */}
+              <div className="p-3 w-full">
+                <div
+                  className="bg-white shadow rounded-md p-4"
+                  style={{ height: 500 }}
+                >
+                  {/* <AreaChart /> */}
+                  <Area {...config} />
+                </div>
               </div>
             </div>
           </div>
@@ -884,3 +808,6 @@ export default function Home() {
     </>
   );
 }
+
+
+
