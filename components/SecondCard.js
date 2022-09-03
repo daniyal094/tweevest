@@ -163,7 +163,7 @@ const SecondCard = () => {
       </h1>
       <div className="w-50">
         <label
-          for="countries"
+          htmlFor="countries"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
         >
           Select an option

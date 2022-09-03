@@ -13,8 +13,8 @@ const Tabs = () => {
     <>
       <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 px-10 my-3">
         <ul className="flex flex-wrap -mb-px">
-          {tabList?.map((item) => (
-            <li className="mr-2">
+          {tabList?.map((item,idx) => (
+            <li className="mr-2" key={idx + 1}>
               <button
                 className={`inline-block p-4 ${
                   activeTab === item.name
