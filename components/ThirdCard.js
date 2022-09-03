@@ -37,109 +37,109 @@ const ThirdCard = () => {
         </span>
       </div>
 
-      <div class="overflow-x-auto relative">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 capitiize bg-white-10 dark:bg-white-700 dark:text-dark-600">
+      <div className="overflow-x-auto relative">
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 capitiize bg-white-10 dark:bg-white-700 dark:text-dark-600">
             <tr>
-              <th scope="col" class="py-3 px-3" style={{ fontSize: 12 }}>
+              <th scope="col" className="py-3 px-3" style={{ fontSize: 12 }}>
                 Symbol
               </th>
-              <th scope="col" class="py-3 px-3" style={{ fontSize: 12 }}>
+              <th scope="col" className="py-3 px-3" style={{ fontSize: 12 }}>
                 Company
               </th>
-              <th scope="col" class="py-3 px-3" style={{ fontSize: 12 }}>
+              <th scope="col" className="py-3 px-3" style={{ fontSize: 12 }}>
                 RS
               </th>
-              <th scope="col" class="py-3 px-3" style={{ fontSize: 12 }}>
+              <th scope="col" className="py-3 px-3" style={{ fontSize: 12 }}>
                 5-Day Perf.
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-white  dark:bg-white-800 dark:border-gray-700">
+            <tr className="bg-white  dark:bg-white-800 dark:border-gray-700">
               <th
                 scope="row"
-                class="py-4 px-3 font-medium   text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium   text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
               >
                 AMZN
               </th>
               <th
                 scope="row"
-                class="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
              >
                 Amazon
               </th>
               <th
                 scope="row"
-                class="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
             >
                 78
               </th>
               <th
                 scope="row"
-                class="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
            >
                 +15%
               </th>
             </tr>
-            <tr class="bg-white  dark:bg-white-800 dark:border-gray-700">
+            <tr className="bg-white  dark:bg-white-800 dark:border-gray-700">
               <th
                 scope="row"
-                class="py-4 px-3 font-medium   text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium   text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
               >
                 AMZN
               </th>
               <th
                 scope="row"
-                class="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
              >
                 Amazon
               </th>
               <th
                 scope="row"
-                class="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
             >
                 78
               </th>
               <th
                 scope="row"
-                class="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
            >
                 +15%
               </th>
-            </tr>            <tr class="bg-white  dark:bg-white-800 dark:border-gray-700">
+            </tr>            <tr className="bg-white  dark:bg-white-800 dark:border-gray-700">
               <th
                 scope="row"
-                class="py-4 px-3 font-medium   text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium   text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
               >
                 AMZN
               </th>
               <th
                 scope="row"
-                class="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
              >
                 Amazon
               </th>
               <th
                 scope="row"
-                class="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
             >
                 78
               </th>
               <th
                 scope="row"
-                class="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
+                className="py-4 px-3 font-medium  text-gray-900 whitespace-nowrap dark:text-dark"
                 style={{fontSize:11}}
            >
                 +15%

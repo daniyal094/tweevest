@@ -164,13 +164,13 @@ const SecondCard = () => {
       <div className="w-50">
         <label
           for="countries"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
         >
           Select an option
         </label>
         <select
           id="countries"
-          class="bg-gray-50 border outline-none mb-5 mt-4 ml-auto border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-half p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border outline-none mb-5 mt-4 ml-auto border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-half p-2.5 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500"
         >
           <option selected>Price to Sales</option>
           <option value="US">United States</option>
